@@ -1,0 +1,66 @@
+# .bashrc
+
+[[ $- != *i* ]] && return
+
+if [ -f /etc/bashrc ]; then
+  source /etc/bashrc
+fi
+
+if [ -f ~/.bash_colors ]; then
+  source ~/.bash_colors
+fi
+
+stty sane
+
+PS1="\[$bldpur\]\h:\W\$\[$txtrst\] "
+#PS1="\n[\u@\[\033[00;31m\]\h\[\033[00m\]:\W]\$ "
+#PS1="\[$txtcyn\]\[\h\]:\[\W\]\$\[$txtrst\] "
+PYTHONPATH=${PYTHONPATH}:/home/hep/sch11/src/GangaUtils
+DLHCB="https://svn.cern.ch/reps/lhcbdocs"
+DICL="svn+ssh://svn.cern.ch/reps/lhcbimperial/Users"
+LXP="shall@lxplus5.cern.ch"
+LX4="sch11@lx04.hep.ph.ic.ac.uk"
+LX5="sch11@lx05.hep.ph.ic.ac.uk"
+LX6="sch11@lx06.hep.ph.ic.ac.uk"
+WS="/afs/cern.ch/work/s/shall"
+User_release_area="/afs/cern.ch/work/s/shall/cmtuser"
+
+# User specific aliases and functions
+alias sl="ls "
+alias ll="pwd && ls -ltr"
+alias la="ls -a"
+alias kd="cd"
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+alias vmi="vim"
+alias im="vim"
+alias r=". ~/scripts/root.sh "
+alias root="root -l"
+alias groot="~/scripts/grt.sh"
+alias remake="make -B"
+alias lhcb=". ~lhcb/grouplogin/lhcb_login.sh"
+alias lxp="ssh -XAY shall@lxplus5.cern.ch"
+alias lx4="ssh -XAY sch11@lx04.hep.ph.ic.ac.uk"
+alias lx5="ssh -XAY sch11@lx05.hep.ph.ic.ac.uk"
+alias lx6="ssh -XAY sch11@lx06.hep.ph.ic.ac.uk"
+alias ..="cd .."
+alias ...="cd ../.."
+alias spg="SetupProject Ganga && ~/scripts/draw.py gengar"
+alias spgg="SetupProject Ganga && ~/scripts/draw.py gengar && ganga"
+alias spggg="SetupProject Ganga && ganga"
+alias sdv="SetupDaVinci && ~/scripts/draw.py monalisa"
+alias pyhton="python"
+alias pdg="firefox http://pdglive.lbl.gov/listings1.brl?quickin=Y"
+alias jabberwocky="echo 'Twas brilling and the slithy toves'"
+alias vv4="cd /vols/lhcbdisk04/shall"
+alias print="lp -d lp4345 -o sides=two-sided-long-edge "
+alias particles="~/scripts/particles.sh"
+alias vin="vim"
+alias vi="vim"
+alias bdt="python /afs/cern.ch/work/s/shall/public/bdt/bdtRun.py"
+alias bible="evince ~/scripts/lhcbdetector.pdf"
+alias pyroot="echo 'from ROOT import TTree, TFile, TH1F, TCanvas' && python"
+alias spb="SetupProject Bender && ~/scripts/draw.py bender"
+alias draw="/home/hep/sch11/scripts/draw.py"
+alias ws="cd /afs/cern.ch/work/s/shall"

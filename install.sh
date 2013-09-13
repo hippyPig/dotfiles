@@ -5,7 +5,7 @@
 
 dotdir=~/dotfiles             # dotfiles directory
 olddir=~/dotfiles_old         # old dotfiles backup directory
-files="vimrc vim bashrc bash"
+files="vimrc vim bashrc bash tmux tmux.conf"
 
 
 function BackupAll {
@@ -43,12 +43,6 @@ then
   mkdir -p $dotfiles/vim/indent
   wget http://www.vim.org/scripts/download_script.php?src_id=4316 -O $dotfiles/vim/indent/python.vim -q
 fi
-if [ ! -e $dotfiles/vim/bundle/vundle ]
-then
-  echo "Getting Vundle"
-  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-  echo "Now run :BundleInsttall in  vim"
-fi
 if [ ! -e $HOME/PowerlineSymbols-Powerline.otf ]
 then
   echo "Installing fonts"
@@ -58,6 +52,7 @@ then
   mv PowerlineSymbols-Powerline.otf ~/.fonts/.
   sudo fc-cache -vf
 fi
+apt-get install exuberant-ctags
 }
 
 BackupAll $olddir

@@ -1,0 +1,5 @@
+#session1
+new  -n split
+select-window -t split
+splitw -h -p 52 -t split
+

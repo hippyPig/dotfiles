@@ -18,6 +18,7 @@ set encoding=utf8
 set guicursor=n:blinkon0
 set list
 set listchars=tab:▸\ ,
+set listchars=eol:↵
 let mapleader = ","
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
@@ -50,8 +51,6 @@ vnoremap <Leader>s :s///gc<Left><Left><Left>
 set tabpagemax=30
 set backspace=indent,eol,start
 
-" keep a few screen lines around the cursor
-set scrolloff=10
 
 " Tab settings for individual filetypes
 function! Tabglobal(numspaces)
@@ -72,16 +71,18 @@ endif
 
 " Navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Keep cursor on center line and disable arrows and page{up,down}
-no h hzz
-no k kzz
-no l lzz
-no j jzz
-no <c-u> <c-u>zz
-no <c-d> <c-d>zz
-no n nzz
-no N Nzz
-no G Gzz
+" keep a few screen lines around the cursor
+set scrolloff=15
+" Disable arrows and page{up,down}
+no h h
+no k k
+no l l
+no j j
+no <c-u> <c-u>
+no <c-d> <c-d>
+no n n
+no N N
+no G G
 no <left> <nop>
 no <right> <nop>
 no <up> ddkP
@@ -132,11 +133,10 @@ cnoreabbrev Q1 q!<CR>
 " Cunning pal to paste consecutive numbers in column
 map + yyp<C-A>
 " Fast editing of vimrc
-map <leader>e :w<CR>:vsp ~/.vimrc<CR>
+map <leader>e :w<CR>:tabnew<CR>:e ~/.vimrc<CR>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 " Brackets
-imap <leader>9 ()<esc>i
 imap <leader>( ()<esc>i
 imap <leader>[ []<esc>i
 imap <leader>{ {}<esc>i
@@ -159,13 +159,18 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'morhetz/gruvbox'
 Bundle 'ervandew/supertab'
 Bundle 'kevinw/pyflakes-vim'
-"Bundle 'flazz/vim-colorschemes'
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'rhysd/open-pdf.vim'
+"Bundle 'xolox/vim-easytags'
+"Bundle 'xolox/vim-misc'
+
+"Bundle 'flazz/vim-colorschemes' " All the colorschemes
 "Bundle 'scrooloose/syntastic' " Pain with cpp
 "Bundle 'biskark/vim-ultimate-colorscheme-utility'
 
 " For move  - disables because key bindings don't work except with C
-"Bundle 'matze/vim-move'
-"let g:move_map_keys = 0
+Bundle 'matze/vim-move'
+"let g:move_map_keys = 1
 "let g:move_key_modifier = 'C'
 
 
@@ -231,4 +236,6 @@ autocmd BufNewFile,BufRead Makefile set noexpandtab
 autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
 
 " ignore '.DS_Store', '*.pyc' and '*.pyo' files in directory listings
-let g:netrw_list_hide='\v(\.DS_Store)|(.*\.py[co])|(\.swp)$'
+let g:netrw_list_hide='\v(\.DS_Store)|(.*\.py[co])|(\.swp)|(\.nav)|(\.aux)$'
+
+

@@ -26,10 +26,7 @@ imap <leader>ma int main(int argc, char *argv[])<space>{<CR>}<Esc>Oreturn 0;<Esc
 imap <leader>sw switch()<Space>{<CR>case :<CR>default:<CR>}<Esc>kO<C-T>break;<Esc>2khi
 imap <leader>co std::cout<Space><<<Space>"<Space><<<Space>std::endl;<Esc>F"i"
 imap <leader>as assert();<esc>F(a
-map <leader>/ I//<Esc>j
-imap <leader>/ <Esc>I//
 map <S-Insert> <MiddleMouse>
-vmap ? I//<Esc>
 
 " REALLY LAZY
 imap <leader>ve std::vector<><esc>F<a

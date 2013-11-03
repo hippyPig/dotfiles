@@ -13,8 +13,5 @@ map <F12> :call FillLine('#')<cr>
 imap <leader>" """"""<Esc>2hi
 map <leader>" i""""""<Esc>2hi
 imap <leader>nm if<Space>__name__<Space>==<Space>"__main__":<CR>
-vmap ? I#<Esc>
-imap <leader>/ <Esc>I#
-map <leader>/ I#<Esc>j
 
 

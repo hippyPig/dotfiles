@@ -7,7 +7,7 @@ import subprocess
 
 class VimFormatOutput(object):
     def __init__(self, class_type, tag_type):
-        self.head = 'syn keyword %s   ' % class_type
+        self.head = '\nsyn keyword %s   ' % class_type
         self.lines = [self.head]
         self.tag = tag_type
         self.items = []
@@ -91,13 +91,13 @@ def main():
     #get_tags()
     regexp = tags_regexp()
     tags = []
-    with open('/home/scphall/dotfiles/tags', 'r') as f:
+    with open('tags', 'r') as f:
         for l in f:
             search_obj = regexp.search(l)
             if not search_obj:
                 continue
             tags.append(post_process_tag(search_obj))
-    filename = '/home/scphall/.vim/ctypes.vim'
+    filename = 'ctypes.vim'
     vim_highlight_rules(tags, 'c', 'cType', filename)
     vim_highlight_rules(tags, 'v', 'Constant', filename)      # kTRUE
     vim_highlight_rules(tags, 't', 'cType', filename)      # Bool_t

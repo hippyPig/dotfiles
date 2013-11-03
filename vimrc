@@ -16,9 +16,9 @@ set shiftwidth=2
 set encoding=utf8
 " set cursorline " Too slow on my little laptop
 set guicursor=n:blinkon0
-set list
-set listchars=tab:▸\ ,
-set listchars=eol:↵
+"set list
+"set listchars=tab:▸\ ,
+"set listchars=eol:↵
 let mapleader = ","
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
@@ -85,8 +85,6 @@ no N N
 no G G
 no <left> <nop>
 no <right> <nop>
-no <up> ddkP
-no <down> ddp
 ino <left> <nop>
 ino <right> <nop>
 ino <up> <nop>
@@ -107,10 +105,10 @@ vno <pagedown> <nop>
 nmap <leader>w :w<CR>
 "map <BS> i<BS>
 imap <C-v> <Esc>l<C-v>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
 vmap <C-f> :fold<CR>
 map <leader>tn :tabnext<CR>
 map <leader>tp :tabprevious<CR>
@@ -158,9 +156,10 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'morhetz/gruvbox'
 Bundle 'ervandew/supertab'
-Bundle 'kevinw/pyflakes-vim'
+"Bundle 'kevinw/pyflakes-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'rhysd/open-pdf.vim'
+Bundle "pangloss/vim-javascript"
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 
@@ -170,8 +169,8 @@ Bundle 'rhysd/open-pdf.vim'
 
 " For move  - disables because key bindings don't work except with C
 Bundle 'matze/vim-move'
-"let g:move_map_keys = 1
-"let g:move_key_modifier = 'C'
+let g:move_map_keys = 1
+let g:move_key_modifier = 'C'
 
 
 " Color scheme and visual stuff

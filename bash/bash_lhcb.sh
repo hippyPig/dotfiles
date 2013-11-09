@@ -35,7 +35,7 @@ LXP="shall@lxplus5.cern.ch"
 LXPW="shall@lxplus5.cern.ch:/afs/cern.ch/work/s/shall"
 WS="/afs/cern.ch/work/s/shall"
 
-alias mountAfs='sshfs sch11@lxplus.hep.ph.ic.ac.uk:/afs/cern.ch/work/s/shall ~/work/afs/'
+alias mountAfs='sshfs shall@lxplus.cern.ch:/afs/cern.ch/work/s/shall ~/work/afs/'
 
 DLHCB="https://svn.cern.ch/reps/lhcbdocs"
 DICL="svn+ssh://svn.cern.ch/reps/lhcbimperial/Users"

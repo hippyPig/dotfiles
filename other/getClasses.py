@@ -23,6 +23,8 @@ class VimFormatOutput(object):
         #elif any(x in self.ignore for x in itemname):
         elif any(x in itemname for x in self.ignore):
             return False
+        elif len(itemname) == 1:
+            return False
         return True
     #
     def append(self, itemname):

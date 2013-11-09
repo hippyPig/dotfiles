@@ -1,1 +1,0 @@
-/Users/scphall/dotfiles/bashrc

@@ -943,16 +943,8 @@ syn keyword cType    vCell2D_i vCell2D_t vCellGeom_ci vCellGeom_i vCellGeom_t
 syn keyword cType    vCellId_i vCellId_t vFloat_i vFloat_t vPathMark_ci
 syn keyword cType    vPathMark_i vPathMark_t vPreScale_i vPreScale_t
 syn keyword cType    vRawRecord_t vSliceInfo_i vSliceInfo_t vVector2_i
-syn keyword cType    vVector2_t va_list value_t value_type vec2D vecBool
-syn keyword cType    vecString vec_const_iterator vec_iterator vector_t
-syn keyword cType    vpPolygon_ci vpPolygon_i vpPolygon_t vvFloat_i vvFloat_t
 syn keyword cType    xsegment zoneFreeHookFunc_t zoneMallocHookFunc_t
-syn keyword cConstant    A0 A0L A0R A1 A2 AB ABC AC ACB AClean ADirty ALERT
-syn keyword cConstant    ALIBALL00 APL APR AS AT ATL ATR Activate AllStages
-syn keyword cConstant    Analytic ApplyNLLW2 Auto BA BAC BALL05 BALL07PRIVATE
-syn keyword cConstant    BC BCA BFS05 BOUNDARY_LEFT BOUNDARY_RIGHT
 syn keyword cConstant    BOUNDARY_UNKNOWN Balance Both BucketSize BulkPartition
-syn keyword cConstant    CA CAB CARTESIAN CB CBA CRITICAL Caching Calculate
 syn keyword cConstant    CalculateNoOffset CanBeExtended CanNotBeExtended
 syn keyword cConstant    Client Closed ClosedBothEnds Coherent CollectErrors
 syn keyword cConstant    ConfigChange ConstOpt Contents ConversionMatch
@@ -2906,10 +2898,6 @@ syn keyword cType    int_least8_t int_type internal_value_type ios_all_saver
 syn keyword cType    ios_exception_saver ios_fill_saver ios_iostate_saver
 syn keyword cType    ios_locale_saver ios_rdbuf_saver ios_tie_saver itPair
 syn keyword cType    itVec iter iterator iterator_category iterator_t
-syn keyword cType    iterator_type_list key_type krb5_auth_context krb5_ccache
-syn keyword cType    krb5_context krb5_principal least local_streambuffer_t
-syn keyword cType    local_stringbuffer_t lpTGLColorSet_t mFiltered_i
-syn keyword cType    mFiltered_t masking_type mmalloc_info my_bool
 syn keyword cType    name2index_iterator node_allocator node_type noncopyable
 syn keyword cType    none_t number obj_type option pDouble_t pRooAbsData
 syn keyword cType    pRooAbsTestStatistic pRooArgList pRooArgSet pRooCategory
@@ -2932,18 +2920,9 @@ syn keyword cType    vBinCells_t vCell2D_i vCell2D_t vCellGeom_ci vCellGeom_i
 syn keyword cType    vCellGeom_t vCellId_i vCellId_t vFloat_i vFloat_t
 syn keyword cType    vPathMark_ci vPathMark_i vPathMark_t vPreScale_i
 syn keyword cType    vPreScale_t vRawRecord_t vSliceInfo_i vSliceInfo_t
-syn keyword cType    vVector2_i vVector2_t va_list val_tag value value_t
 syn keyword cType    value_type vec2D vecBool vecString vec_const_iterator
 syn keyword cType    vec_iterator vector_t vpPolygon_ci vpPolygon_i vpPolygon_t
-syn keyword cType    vvFloat_i vvFloat_t wchar_t_if_supported
 syn keyword cType    wcommand_line_parser wios_all_saver wios_exception_saver
-syn keyword cType    wios_fill_saver wios_iostate_saver wios_locale_saver
-syn keyword cType    wios_rdbuf_saver wios_tie_saver woption wparsed_options
-syn keyword cType    xsegment zoneFreeHookFunc_t zoneMallocHookFunc_t
-syn keyword cConstant    A0 A0L A0R A1 A2 AB ABC AC ACB AClean ADirty ALERT
-syn keyword cConstant    ALIBALL00 APL APR AS AT ATL ATR Activate AllStages
-syn keyword cConstant    Analytic ApplyNLLW2 Auto BA BAC BALL05 BALL07PRIVATE
-syn keyword cConstant    BC BCA BFS05 BOUNDARY_LEFT BOUNDARY_RIGHT
 syn keyword cConstant    BOUNDARY_UNKNOWN Balance Both BucketSize BulkPartition
 syn keyword cConstant    CA CAB CARTESIAN CB CBA CRITICAL Caching Calculate
 syn keyword cConstant    CalculateNoOffset CanBeExtended CanNotBeExtended
@@ -2956,22 +2935,6 @@ syn keyword cConstant    DOUBLE_GAUSS DataHandling DeActivate DoubleSided E
 syn keyword cConstant    EMERGENCY ERROR EnableOffset EtaPic EtaPiz Eval
 syn keyword cConstant    ExactMatch Expected Extend Extended ExtendedPdf
 syn keyword cConstant    ExtraForProblem FAMILY_BOLD FAMILY_BOLD_ITALIC
-syn keyword cConstant    FAMILY_ITALIC FAMILY_MATH_BLACKBOARD_BOLD
-syn keyword cConstant    FAMILY_MATH_BOLD_ITALIC FAMILY_MATH_FRAKTUR_BOLD
-syn keyword cConstant    FAMILY_MATH_FRAKTUR_REGULAR FAMILY_MATH_ITALIC
-syn keyword cConstant    FAMILY_MATH_MONOSPACE FAMILY_MATH_SANS_SERIF_BOLD
-syn keyword cConstant    FAMILY_MATH_SANS_SERIF_BOLD_ITALIC
-syn keyword cConstant    FAMILY_MATH_SANS_SERIF_ITALIC
-syn keyword cConstant    FAMILY_MATH_SANS_SERIF_REGULAR
-syn keyword cConstant    FAMILY_MATH_SCRIPT_BOLD_ITALIC
-syn keyword cConstant    FAMILY_MATH_SCRIPT_ITALIC FAMILY_PLAIN FAMILY_REGULAR
-syn keyword cConstant    FAMILY_STIX_BOLD FAMILY_STIX_BOLD_ITALIC
-syn keyword cConstant    FAMILY_STIX_ITALIC FAMILY_STIX_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_1_BOLD FAMILY_STIX_SIZE_1_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_2_BOLD FAMILY_STIX_SIZE_2_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_3_BOLD FAMILY_STIX_SIZE_3_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_4_BOLD FAMILY_STIX_SIZE_4_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_5_REGULAR FATAL FLATTE
 syn keyword cConstant    FindConstantNodes Fitting Flat Flipped Function G
 syn keyword cConstant    GAUSS GAUSS_CLEO GAUSS_CLEO_ZEMACH GLConstants GS
 syn keyword cConstant    GS_CLEO GS_CLEO_ZEMACH Generation HISTORY Html_A
@@ -3010,7 +2973,6 @@ syn keyword cConstant    Html_STRONG Html_STYLE Html_SUB Html_SUP Html_Space
 syn keyword cConstant    Html_TABLE Html_TD Html_TEXTAREA Html_TH Html_TITLE
 syn keyword cConstant    Html_TR Html_TT Html_Text Html_U Html_UL Html_Unknown
 syn keyword cConstant    Html_VAR Html_WBR Html_XMP Hybrid I1 I1c I1s I2 I2c
-syn keyword cConstant    I2s I3 I4 I5 I6 I6c I6s I7 I8 I9 INFO IS_PRIVATE
 syn keyword cConstant    Ignore Importance ImportanceOnly InThisScope
 syn keyword cConstant    Incoherent IndexNotFound Initialize Inline
 syn keyword cConstant    InputArguments Integration Interleave Intrinsic
@@ -3072,10 +3034,7 @@ syn keyword cConstant    cosBasisSum coshBasis coshBasisMinus coshBasisPlus
 syn keyword cConstant    coshBasisSum dataonly default_style drop_empty_tokens
 syn keyword cConstant    empty_adjacent_parameter exclude_positional expBasis
 syn keyword cConstant    expBasisMinus expBasisPlus expBasisSum extra_parameter
-syn keyword cConstant    full full_match genericBasis gnu_demangling
-syn keyword cConstant    include_positional initial_base_ invalid_bool_value
 syn keyword cConstant    invalid_option invalid_option_value k16Bits k2A
-syn keyword cConstant    k2BetaMinus k2D k2N k2P k3D k3DTypes kA2_1320Plus
 syn keyword cConstant    kA2_1320_0 kA4 kABORTED kACCUM_ALPHA_BITS
 syn keyword cConstant    kACCUM_BLUE_BITS kACCUM_CLEAR_VALUE kACCUM_GREEN_BITS
 syn keyword cConstant    kACCUM_RED_BITS kAGD_BCLOSE kAGD_BDRAW kAGD_CONTCOLOR
@@ -3965,8 +3924,8 @@ syn keyword cConstant    shoutCount shoutCountFlush shoutDebug shoutEmph
 syn keyword cConstant    shoutError shoutHello shoutInfo shoutNone shoutReset
 syn keyword cConstant    shoutResult shoutWarning sinBasis sinBasisMinus
 syn keyword cConstant    sinBasisPlus sinBasisSum sinhBasis sinhBasisMinus
-syn keyword cConstant    sinhBasisPlus sinhBasisSum size static_size t_class
+syn keyword cConstant    sinhBasisPlus sinhBasisSum static_size t_class
 syn keyword cConstant    t_datamember t_enum t_enumelement t_fundamental
 syn keyword cConstant    t_global t_globalfunc t_invalid t_local t_memberfunc
 syn keyword cConstant    t_typedef unix_style unknown_demangling
-syn keyword cConstant    unrecognized_line value
+syn keyword cConstant    unrecognized_line

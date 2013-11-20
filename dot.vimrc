@@ -151,6 +151,9 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/powerline-fonts'
 Bundle 'tpope/vim-surround'
 Bundle 'sjl/badwolf'
+Bundle 'Pychimp/vim-sol'
+Bundle 'Pychimp/vim-luna'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'tpope/vim-vividchalk'
@@ -159,13 +162,20 @@ Bundle 'ervandew/supertab'
 "Bundle 'kevinw/pyflakes-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'rhysd/open-pdf.vim'
-Bundle "pangloss/vim-javascript"
+Bundle 'pangloss/vim-javascript'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'endel/vim-github-colorscheme'
+Bundle 'lfilho/cosco.vim'
+Bundle 'arecarn/crunch'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
+"Bundle 'xolox/vim-colorscheme-switcher'
 
-"Bundle 'flazz/vim-colorschemes' " All the colorschemes
+" All the colorschemes
+"Bundle 'flazz/vim-colorschemes'
 "Bundle 'scrooloose/syntastic' " Pain with cpp
 "Bundle 'biskark/vim-ultimate-colorscheme-utility'
+"g:colorscheme_switcher_define_mappings
 
 " For move  - disables because key bindings don't work except with C
 Bundle 'matze/vim-move'
@@ -237,4 +247,14 @@ autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
 " ignore '.DS_Store', '*.pyc' and '*.pyo' files in directory listings
 let g:netrw_list_hide='\v(\.DS_Store)|(.*\.py[co])|(\.swp)|(\.nav)|(\.aux)$'
 
+" If on my mac (fasster), I will set cursorline
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Darwin"
+  set cursorline
+endif
+
+" Also for gvim (rarely use, but nice when I do)
+if has("gui_running")
+  set cursorline
+endif
 

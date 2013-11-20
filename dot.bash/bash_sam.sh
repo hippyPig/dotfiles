@@ -46,7 +46,7 @@ alias wol="$HOME/.wol/python/wol.py "
 export WOLDIR="$HOME/Documents/Wol"
 complete -o nospace -f default -X '.*' -F _wol wol
 
-#if [ $platform == "OSX" ]; then
-  #source ~/.git-completion.bash
-#fi
+if [[ $platform == "OSX" ]]; then
+  source ~/.git-completion.bash
+fi
 

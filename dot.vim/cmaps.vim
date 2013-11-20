@@ -6,8 +6,11 @@ call Tabglobal(2)
 "    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
 "augroup END
 
+map <c-e> a//<esc>:call FillLine('=')<cr>$F/R/<space><esc>^
+imap <c-e> //<esc>:call FillLine('=')<cr>$F/R/<space><esc>^
 
-map <F12> i//<esc>:call FillLine('=')<cr>$XF/a<space>
+nmap <silent> ,; :call cosco#commaOrSemiColon()<CR>j
+inoremap <silent> ,; <ESC>:call cosco#commaOrSemiColon()"<CR>a
 
 " Compile
 map <F2> :w<CR>:!make<CR>

@@ -1,4 +1,3 @@
-syn keyword cType    AliBall00 AnaIntConfig AnaIntData BFS Ball05 Ball07Private
 syn keyword cType    Barrel BinomialSumAsym BinomialSumEff BitBlock BuildConfig
 syn keyword cType    CacheElem CatVector ClassFacIFace ClassFiles ClassRelInfo
 syn keyword cType    CodeRepo CompareEntry CompareSeek CustIFace DataBlock
@@ -676,14 +675,6 @@ syn keyword cType    TXProofMgr TXProofServ TXSemaphoreGuard TXSlave TXSockBuf
 syn keyword cType    TXSockPipe TXSocket TXSocketHandler TXTRU TXUnixSocket
 syn keyword cType    TXrdClientAdminWrapper TZIPFile TZIPMember Tesselator
 syn keyword cType    UEDPhysicsModel VecTVecDouble VecVecDouble WSDir
-syn keyword cType    WilsonCoefficientssyn keyword Constant    EVTSECONDARYLENGTH EVTSTDHEPLENGTH FTGL_BACK_FACING
-syn keyword Constant    FTGL_FRONT_FACING Gl_beep_hook Gl_in_key HEPEVT
-syn keyword Constant    MAX_DAUG MAX_LEVEL MAX_TRIES None SPIN_NAME_LENGTH
-syn keyword Constant    STP_pressure STP_temperature TMCProcessName base_dist
-syn keyword Constant    base_length bi_buf bi_valid bl_count bl_desc bl_order
-syn keyword Constant    bl_tree compressed_len configuration_table d_buf d_desc
-syn keyword Constant    depth dist_code dyn_dtree dyn_ltree eofile error_flag
-syn keyword Constant    extra_blbits extra_dbits extra_lbits flag_bit flag_buf
 syn keyword Constant    flags gApplication gAuthenticateMutex gBatchGuiFactory
 syn keyword Constant    gBenchmark gCINTMutex gCint gClassTable gClient
 syn keyword Constant    gCollectionMutex gCurrentRegion gDNDManager gDebug
@@ -698,13 +689,11 @@ syn keyword Constant    gHelpPullDownMenus gHelpRemote gHelpSMAxis
 syn keyword Constant    gHelpSMCanvas gHelpSMGeneral gHelpSMHistos gHelpSMPSPDF
 syn keyword Constant    gHelpSMPad gHelpSMStats gHelpSMTitle gHelpSMTopLevel
 syn keyword Constant    gHelpTextEditor gHistImagePalette gHtml gInterpreter
-syn keyword Constant    gMC gMOTIF_WM_HINTS gMatrixCheck gMinuit gMinuit2
 syn keyword Constant    gMmallocDesc gMonitoringReader gMonitoringWriter
 syn keyword Constant    gMsgService gNode gObjectTable gPad gPerfStats
 syn keyword Constant    gPluginMgr gPrintViaErrorHandler gProgName gProgPath
 syn keyword Constant    gProof gProofDebugLevel gProofDebugMask gProofMutex
 syn keyword Constant    gProofServ gPtr2GLManager gPtr2Interpreter
-syn keyword Constant    gPtr2VirtualX gQt gROOT gROOTMutex gROOT_MESSAGE
 syn keyword Constant    gRandom gRootDir gRootdErrStr gSessionViewer gStipples
 syn keyword Constant    gStringMutex gStyle gSystem gSystemMutex gTQSender
 syn keyword Constant    gTQSlotParams gTVHelpAbout gTVHelpContext
@@ -713,19 +702,13 @@ syn keyword Constant    gTVHelpEditExpressions gTVHelpLayout gTVHelpMacros
 syn keyword Constant    gTVHelpOpenSave gTVHelpSession gTVHelpStart
 syn keyword Constant    gTVHelpUserCommands gTabCom gThreadFactory gThreadTsd
 syn keyword Constant    gThreadXAR gTimeMutex gVirtualPS gVirtualX
-syn keyword Constant    gWM_DELETE_WINDOW gWebImagePalette gX11None gXDisplay
-syn keyword Constant    heap heap_len heap_max in_buf in_offset in_size
-syn keyword Constant    input_len ins_h kAUTH_CRYPT_MSK kAUTH_REUSE_MSK
-syn keyword Constant    kAUTH_RSATY_MSK kAUTH_SSALT_MSK kAnyModifier kAssertMsg
 syn keyword Constant    kBitsPerByte kBranchAny kBranchObject kBreak
 syn keyword Constant    kButton1Mask kButton2Mask kButton3Mask kButton4Mask
 syn keyword Constant    kButton5Mask kButton6Mask kButton7Mask
 syn keyword Constant    kButtonMotionMask kButtonPressMask kButtonReleaseMask
 syn keyword Constant    kCARTESIAN kCP kCYLINDRICAL kCheckMsg
 syn keyword Constant    kColormapChangeMask kCopyFromParent kCutBuffer
-syn keyword Constant    kDMN_HOSTEQ kDMN_RQAUTH kDMN_SYSLOG
-syn keyword Constant    kDataSet_DataSetList kDataSet_LocalCache
-syn keyword Constant    kDataSet_LockLocation kDiv kDivNum kDoBlue kDoGreen
+syn keyword Constant    kDiv kDivNum kDoBlue kDoGreen
 syn keyword Constant    kDoNotProcess kDoRed kEnterWindowMask kError
 syn keyword Constant    kExposureMask kFALSE kFatal kFocusChangeMask kGCArcMode
 syn keyword Constant    kGCBackground kGCCapStyle kGCClipMask kGCClipXOrigin
@@ -775,7 +758,8 @@ syn keyword Constant    kWAOverrideRedirect kWASaveUnder kWAWinGravity kWarning
 syn keyword Constant    kXPROOF_Protocol l_buf l_desc last_dist last_flags
 syn keyword Constant    last_lit length_code level lookahead max_lazy_match
 syn keyword Constant    opt_len out_buf out_offset out_size sliding
-syn keyword Constant    static_dtree static_len static_ltree verbose zfilesyn keyword cType    ActionContainer_t AddressList_t AliasList_t Angle_t
+syn keyword Constant    static_dtree static_len static_ltree verbose zfile
+syn keyword cType    ActionContainer_t AddressList_t AliasList_t Angle_t
 syn keyword cType    ArrIterfunc_t Atom_t Axis_t BaseClassInfo_t
 syn keyword cType    BinLikelihoodFitData BinRange_t BoolConfigVec_ci
 syn keyword cType    BoolConfigVec_i BoolConfigVec_t Bool_t BranchMap_t
@@ -944,33 +928,14 @@ syn keyword cType    vCellId_i vCellId_t vFloat_i vFloat_t vPathMark_ci
 syn keyword cType    vPathMark_i vPathMark_t vPreScale_i vPreScale_t
 syn keyword cType    vRawRecord_t vSliceInfo_i vSliceInfo_t vVector2_i
 syn keyword cType    xsegment zoneFreeHookFunc_t zoneMallocHookFunc_t
-syn keyword cConstant    BOUNDARY_UNKNOWN Balance Both BucketSize BulkPartition
-syn keyword cConstant    CalculateNoOffset CanBeExtended CanNotBeExtended
 syn keyword cConstant    Client Closed ClosedBothEnds Coherent CollectErrors
 syn keyword cConstant    ConfigChange ConstOpt Contents ConversionMatch
 syn keyword cConstant    ConversionMatchBytecode CountErrors DEBUG DECAYED
 syn keyword cConstant    DIMENSION10 DIMENSION8 DIRAC DIRECTION_LEFT_TO_RIGHT
-syn keyword cConstant    DIRECTION_RIGHT_TO_LEFT DIRECTION_TOP_TO_BOTTOM
 syn keyword cConstant    DOUBLE_GAUSS DataHandling DeActivate DoubleSided E
 syn keyword cConstant    EMERGENCY ERROR EnableOffset EtaPic EtaPiz Eval
-syn keyword cConstant    ExactMatch Expected Extend Extended ExtendedPdf
+syn keyword cConstant    ExactMatch Expected
 syn keyword cConstant    ExtraForProblem FAMILY_BOLD FAMILY_BOLD_ITALIC
-syn keyword cConstant    FAMILY_ITALIC FAMILY_MATH_BLACKBOARD_BOLD
-syn keyword cConstant    FAMILY_MATH_BOLD_ITALIC FAMILY_MATH_FRAKTUR_BOLD
-syn keyword cConstant    FAMILY_MATH_FRAKTUR_REGULAR FAMILY_MATH_ITALIC
-syn keyword cConstant    FAMILY_MATH_MONOSPACE FAMILY_MATH_SANS_SERIF_BOLD
-syn keyword cConstant    FAMILY_MATH_SANS_SERIF_BOLD_ITALIC
-syn keyword cConstant    FAMILY_MATH_SANS_SERIF_ITALIC
-syn keyword cConstant    FAMILY_MATH_SANS_SERIF_REGULAR
-syn keyword cConstant    FAMILY_MATH_SCRIPT_BOLD_ITALIC
-syn keyword cConstant    FAMILY_MATH_SCRIPT_ITALIC FAMILY_PLAIN FAMILY_REGULAR
-syn keyword cConstant    FAMILY_STIX_BOLD FAMILY_STIX_BOLD_ITALIC
-syn keyword cConstant    FAMILY_STIX_ITALIC FAMILY_STIX_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_1_BOLD FAMILY_STIX_SIZE_1_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_2_BOLD FAMILY_STIX_SIZE_2_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_3_BOLD FAMILY_STIX_SIZE_3_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_4_BOLD FAMILY_STIX_SIZE_4_REGULAR
-syn keyword cConstant    FAMILY_STIX_SIZE_5_REGULAR FATAL FLATTE
 syn keyword cConstant    FindConstantNodes Fitting Flat Flipped Function G
 syn keyword cConstant    GAUSS GAUSS_CLEO GAUSS_CLEO_ZEMACH GLConstants GS
 syn keyword cConstant    GS_CLEO GS_CLEO_ZEMACH Generation HISTORY Html_A
@@ -1024,7 +989,6 @@ syn keyword cConstant    MaxPrimitiveDegree Maximum Midpoint Minimization Minus
 syn keyword cConstant    Mirror MirrorAsymBoth MirrorAsymLeft
 syn keyword cConstant    MirrorAsymLeftRight MirrorAsymRight MirrorBoth
 syn keyword cConstant    MirrorLeft MirrorLeftAsymRight MirrorRight
-syn keyword cConstant    MustBeExtended NBOUNDARY NBW NBits NEGIM NEGRE
 syn keyword cConstant    NEUTRINO NFAMILY NLIMITS NONRES NONRES_CCS NONRES_EXP
 syn keyword cConstant    NONRES_EXP_ADD NONRES_LAURA NONRES_LIN NON_RES
 syn keyword cConstant    NON_RES_EXP NON_RES_LIN NOTICE NOT_DEF NOT_INT NSTYLE
@@ -1559,7 +1523,6 @@ syn keyword cConstant    kMarkerNDC kMaster kMatSavePrimitive kMatStateGas
 syn keyword cConstant    kMatStateLiquid kMatStateSolid kMatStateUndefined
 syn keyword cConstant    kMatUsed kMatch kMatchConversion
 syn keyword cConstant    kMatchConversionCollection kMatrixSet kMax kMaxFiles
-syn keyword cConstant    kMaxGlyphs kMaxIf kMaxProcTimeExtended
 syn keyword cConstant    kMaxProcTimeReached kMaxThreadSlot kMaxUserThreadSlot
 syn keyword cConstant    kMdiBorderWidth kMdiCascade kMdiClientGeometry
 syn keyword cConstant    kMdiClose kMdiDecorGeometry kMdiDefaultHints
@@ -2933,7 +2896,6 @@ syn keyword cConstant    DIMENSION10 DIMENSION8 DIRAC DIRECTION_LEFT_TO_RIGHT
 syn keyword cConstant    DIRECTION_RIGHT_TO_LEFT DIRECTION_TOP_TO_BOTTOM
 syn keyword cConstant    DOUBLE_GAUSS DataHandling DeActivate DoubleSided E
 syn keyword cConstant    EMERGENCY ERROR EnableOffset EtaPic EtaPiz Eval
-syn keyword cConstant    ExactMatch Expected Extend Extended ExtendedPdf
 syn keyword cConstant    ExtraForProblem FAMILY_BOLD FAMILY_BOLD_ITALIC
 syn keyword cConstant    FindConstantNodes Fitting Flat Flipped Function G
 syn keyword cConstant    GAUSS GAUSS_CLEO GAUSS_CLEO_ZEMACH GLConstants GS
@@ -2987,7 +2949,6 @@ syn keyword cConstant    MaxPrimitiveDegree Maximum Midpoint Minimization Minus
 syn keyword cConstant    Mirror MirrorAsymBoth MirrorAsymLeft
 syn keyword cConstant    MirrorAsymLeftRight MirrorAsymRight MirrorBoth
 syn keyword cConstant    MirrorLeft MirrorLeftAsymRight MirrorRight
-syn keyword cConstant    MustBeExtended NBOUNDARY NBW NBits NEGIM NEGRE
 syn keyword cConstant    NEUTRINO NFAMILY NLIMITS NONRES NONRES_CCS NONRES_EXP
 syn keyword cConstant    NONRES_EXP_ADD NONRES_LAURA NONRES_LIN NON_RES
 syn keyword cConstant    NON_RES_EXP NON_RES_LIN NOTICE NOT_DEF NOT_INT NSTYLE
@@ -3528,7 +3489,6 @@ syn keyword cConstant    kMarkerNDC kMaster kMatSavePrimitive kMatStateGas
 syn keyword cConstant    kMatStateLiquid kMatStateSolid kMatStateUndefined
 syn keyword cConstant    kMatUsed kMatch kMatchConversion
 syn keyword cConstant    kMatchConversionCollection kMatrixSet kMax kMaxFiles
-syn keyword cConstant    kMaxGlyphs kMaxIf kMaxProcTimeExtended
 syn keyword cConstant    kMaxProcTimeReached kMaxThreadSlot kMaxUserThreadSlot
 syn keyword cConstant    kMdiBorderWidth kMdiCascade kMdiClientGeometry
 syn keyword cConstant    kMdiClose kMdiDecorGeometry kMdiDefaultHints

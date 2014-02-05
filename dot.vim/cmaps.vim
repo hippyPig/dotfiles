@@ -5,6 +5,7 @@ call Tabglobal(2)
 "    au BufReadPre * setlocal foldmethod=syntax
 "    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
 "augroup END
+let  mapleader = ","
 
 map <c-e> a//<esc>:call FillLine('=')<cr>$F/R/<space><esc>^
 imap <c-e> //<esc>:call FillLine('=')<cr>$F/R/<space><esc>^
@@ -29,7 +30,6 @@ imap <leader>ma int main(int argc, char *argv[])<space>{<CR>}<Esc>Oreturn 0;<Esc
 imap <leader>sw switch()<Space>{<CR>case :<CR>default:<CR>}<Esc>kO<C-T>break;<Esc>2khi
 imap <leader>co std::cout<Space><<<Space>"<Space><<<Space>std::endl;<Esc>F"i"
 imap <leader>as assert();<esc>F(a
-map <S-Insert> <MiddleMouse>
 
 " REALLY LAZY
 imap <leader>ve std::vector<><esc>F<a

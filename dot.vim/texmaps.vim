@@ -27,4 +27,6 @@ imap <leader>eq \begin{equation}<esc>yypfbcwend<esc>O<C-T>
 imap <leader>al \begin{align}<esc>yypfbcwend<esc>O<C-T>
 imap <leader>co \begin{columns}[c]<esc>yypfbcwend<esc>f[DO<C-T>\begin{column}{0.5\textwidth}<esc>yypfbcwend<esc>2f{DO<C-T>
 
+map j gj
+map k gk
 

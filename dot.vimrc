@@ -20,6 +20,9 @@ set guicursor=n:blinkon0
 "set listchars=tab:▸\ ,
 "set listchars=eol:↵
 let mapleader = ","
+"let mapleader = "\<space>"
+set timeoutlen=500
+
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
 filetype plugin indent on
@@ -43,6 +46,8 @@ autocmd BufWritePre * :call Preserve('%s/\s\+$//e')
 " insert colon at the end of a line
 inoremap <S-Enter> <Esc>:call Preserve('s/\s*$/;/')<Enter>a
 
+" Use black hole register to delete single charater without updating registers
+noremap x "_x
 
 " Replace last search
 nnoremap <Leader>s :%s///gc<Left><Left><Left>
@@ -128,6 +133,9 @@ command! Wq wq
 cnoreabbrev q1 q!<CR>
 cnoreabbrev Q1 q!<CR>
 
+noremap § <esc>
+inoremap § <esc>
+
 " Cunning pal to paste consecutive numbers in column
 map + yyp<C-A>
 " Fast editing of vimrc
@@ -167,6 +175,10 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'lfilho/cosco.vim'
 Bundle 'arecarn/crunch'
+Bundle 'DeonPoncini/includefixer'
+Bundle 'kana/vim-arpeggio'
+Bundle 'hallison/vim-markdown'
+Bundle 'changyuheng/color-scheme-holokai-of-vim'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 "Bundle 'xolox/vim-colorscheme-switcher'
@@ -182,6 +194,7 @@ Bundle 'matze/vim-move'
 let g:move_map_keys = 1
 let g:move_key_modifier = 'C'
 
+call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 
 " Color scheme and visual stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -240,9 +253,12 @@ autocmd FileType c source $HOME/.vim/cmaps.vim
 autocmd FileType python source $HOME/.vim/pymaps.vim
 autocmd FileType hpp source $HOME/.vim/cmaps.vim
 autocmd FileType h source $HOME/.vim/cmaps.vim
+autocmd FileType hs source $HOME/.vim/haskellmaps.vim
 autocmd BufNewFile,BufRead *.tex source $HOME/.vim/texmaps.vim
 autocmd BufNewFile,BufRead Makefile set noexpandtab
 autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 
 " ignore '.DS_Store', '*.pyc' and '*.pyo' files in directory listings
 let g:netrw_list_hide='\v(\.DS_Store)|(.*\.py[co])|(\.swp)|(\.nav)|(\.aux)$'
@@ -257,4 +273,5 @@ endif
 if has("gui_running")
   set cursorline
 endif
+
 

@@ -42,11 +42,13 @@ make() {
   return ${PIPESTATUS[0]}
 }
 
-alias wol="$HOME/.wol/python/wol.py "
+#alias wol="$HOME/.wol/python/wol.py "
+export PATH=$PATH:$HOME/.wol/python
+source $HOME/.wol/wol-autocomplete.sh
 export WOLDIR="$HOME/Documents/Wol"
-complete -o nospace -f default -X '.*' -F _wol wol
 
-if [[ $platform == "OSX" ]]; then
-  source ~/.git-completion.bash
+if [ -f $HOME/.git-completion.bash ]; then
+  source $HOME/.git-completion.bash
 fi
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 

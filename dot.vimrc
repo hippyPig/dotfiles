@@ -262,6 +262,7 @@ autocmd BufNewFile,BufRead Makefile set noexpandtab
 autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.dec set filetype=decfile
+autocmd BufNewFile,BufRead *.md source $HOME/.vim/mdmaps.vim
 
 
 " ignore '.DS_Store', '*.pyc' and '*.pyo' files in directory listings

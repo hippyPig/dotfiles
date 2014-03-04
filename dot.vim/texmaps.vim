@@ -3,6 +3,9 @@ call Tabglobal(2)
 
 let mapleader = "'"
 
+set textwidth=80
+set formatoptions+=t
+
 map <c-l> :call FillLine('%')<cr>
 imap <c-l> <esc>:call FillLine('%')<cr>
 

@@ -1027,7 +1027,7 @@ syn keyword cConstant    WA76 WARNING WithInheritance XIL XIT Xi0 Xi_minus
 syn keyword cConstant    _nPoints arm_demangling auto_demangling cosBasis
 syn keyword cConstant    cosBasisMinus cosBasisPlus cosBasisSum coshBasis
 syn keyword cConstant    coshBasisMinus coshBasisPlus coshBasisSum dataonly
-syn keyword cConstant    expBasis expBasisMinus expBasisPlus expBasisSum full
+syn keyword cConstant    expBasis expBasisMinus expBasisPlus expBasisSum
 syn keyword cConstant    genericBasis gnu_demangling k16Bits k2A k2BetaMinus
 syn keyword cConstant    k2D k2N k2P k3D k3DTypes kA2_1320Plus kA2_1320_0 kA4
 syn keyword cConstant    kABORTED kACCUM_ALPHA_BITS kACCUM_BLUE_BITS

@@ -19,6 +19,10 @@ if [ -f ~/.bash/bash_sam.sh ]; then
   source ~/.bash/bash_sam.sh
 fi
 
+if [ -f ~/.bash/bash_icl.sh ]; then
+  source ~/.bash/bash_icl.sh
+fi
+
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -31,9 +35,8 @@ if [[ $platform == "OSX" ]]; then
   PS1="\[$intgrn\]earth\[$intwht\]:\[$intgrn\]\W\[$intblu\]\$\[$txtrst\] "
 else
   if [[ `hostname -d` == "hep.ph.ic.ac.uk" ]]; then
-    echo "Remember to Setup lhcb"
     alias lhcb=". ~lhcb/grouplogin/lhcb_login.sh"
-    PS1="\[$bldblu\]\h:\W\$\[$txtrst\] "
+    PS1="\[$intblu\]\h\[$txtwht\]:\[$txtgrn\]\W\[$txtblu\]\$\[$txtrst\] "
   elif [[ `hostname` == "pclbic01" ]]; then
     clear
     cat $HOME/scripts/todo.txt

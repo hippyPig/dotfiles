@@ -179,6 +179,7 @@ Bundle 'DeonPoncini/includefixer'
 Bundle 'kana/vim-arpeggio'
 Bundle 'hallison/vim-markdown'
 Bundle 'changyuheng/color-scheme-holokai-of-vim'
+Bundle 'stevensons/vim-decfile'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 "Bundle 'xolox/vim-colorscheme-switcher'
@@ -195,6 +196,8 @@ let g:move_map_keys = 1
 let g:move_key_modifier = 'C'
 
 call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+
+let g:vim_decfile_disable_folding=1
 
 " Color scheme and visual stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -258,6 +261,7 @@ autocmd BufNewFile,BufRead *.tex source $HOME/.vim/texmaps.vim
 autocmd BufNewFile,BufRead Makefile set noexpandtab
 autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.dec set filetype=decfile
 
 
 " ignore '.DS_Store', '*.pyc' and '*.pyo' files in directory listings

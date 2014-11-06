@@ -10,8 +10,10 @@ let  mapleader = ","
 map <c-e> a//<esc>:call FillLine('=')<cr>$F/R/<space><esc>^
 imap <c-e> //<esc>:call FillLine('=')<cr>$F/R/<space><esc>^
 
-nmap <silent> ,; :call cosco#commaOrSemiColon()<CR>j
-inoremap <silent> ,; <ESC>:call cosco#commaOrSemiColon()"<CR>a
+nmap <silent> <leader>; :call cosco#commaOrSemiColon()<CR>j
+inoremap <silent> <leader>; <ESC>:call cosco#commaOrSemiColon()"<CR>a
+"nmap <s-cr> :call cosco#commaOrSemiColon()<CR>j
+"inoremap <s-cr> <ESC>:call cosco#commaOrSemiColon()"<CR>a
 
 " Compile
 map <F2> :w<CR>:!make<CR>

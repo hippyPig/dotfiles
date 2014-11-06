@@ -40,6 +40,18 @@ var half_push = function(direction) {
   });
 };
 
+var real_half_push = function(direction) {
+  var w = 'screenSizeX*1/2';
+  if (direction === 'left') {
+    w = 'screenSizeX*1/2';
+  };
+  return slate.operation('push', {
+    'direction' : direction,
+    //'style' : 'bar-resize:screenSizeX/2'
+    'style' : 'bar-resize:'+w
+  });
+};
+
 
 var half_top = function(direction) {
     return slate.operation('corner', {
@@ -103,18 +115,24 @@ var half_actions = function(direction){
   return [half_push(direction), quarter_push('top', direction), quarter_push('bottom', direction)];
 };
 
+var real_half_actions = function(){
+  return [real_half_push('left'), real_half_push('right')];
+};
+
 key_binds['u:'+hyper] = chain(half_actions('left'));;
 key_binds['i:'+hyper] = chain(half_actions('right'));;
+key_binds['q:'+hyper] = chain(real_half_actions());;
 
 //key_binds['`:alt'] = slate.operation('undo');
 
-key_binds['b:'+hyper] = focus('Safari');
+key_binds['b:'+hyper] = focus('Google Chrome');
 key_binds['t:'+hyper] = focus('Terminal');
 key_binds['o:'+hyper] = focus('Finder');
 key_binds['s:'+hyper] = focus('Skype');
 key_binds['m:'+hyper] = focus('Thunderbird');
 key_binds['p:'+hyper] = focus('iTunes');
 key_binds['a:'+hyper] = focus('Adium');
+key_binds['c:'+hyper] = focus('Calendar');
 key_binds['h:'+hyper] = focus_dir('left');
 key_binds['l:'+hyper] = focus_dir('right');
 key_binds['j:'+hyper] = focus_dir('down');

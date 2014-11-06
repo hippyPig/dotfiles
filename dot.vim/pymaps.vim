@@ -13,8 +13,8 @@ augroup END
 nmap <silent> ,; :call cosco#commaOrSemiColon()<CR>j
 inoremap <silent> ,; <ESC>:call cosco#commaOrSemiColon()"<CR>a
 
-map <c-l> :call FillLine('#')<cr>
-imap <c-l> <esc>:call FillLine('#')<cr>
+map <c-p> :call FillLine('#')<cr>
+imap <c-p> <esc>:call FillLine('#')<cr>
 
 map <F12> :call FillLine('#')<cr>
 imap <leader>" """"""<Esc>2hi

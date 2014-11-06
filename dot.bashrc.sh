@@ -11,17 +11,18 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
-if [ -f ~/.bash/bash_lhcb.sh ]; then
-  source ~/.bash/bash_lhcb.sh
-fi
-
 if [ -f ~/.bash/bash_sam.sh ]; then
   source ~/.bash/bash_sam.sh
 fi
 
-if [ -f ~/.bash/bash_icl.sh ]; then
-  source ~/.bash/bash_icl.sh
+if [ -f ~/.bash/bash_lhcb.sh ]; then
+  source ~/.bash/bash_lhcb.sh
 fi
+
+if [ -f ~/.bash/bash_local.sh ]; then
+  source ~/.bash/bash_local.sh
+fi
+
 
 platform='unknown'
 unamestr=`uname`
@@ -75,3 +76,9 @@ alias cp="cp -i"
 alias root="root -l"
 alias grep="grep --color=auto"
 alias tmux="tmux -2"
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
+#PERL_MB_OPT="--install_base \"/Users/scphall/perl5\""; export PERL_MB_OPT;
+#PERL_MM_OPT="INSTALL_BASE=/Users/scphall/perl5"; export PERL_MM_OPT;
+#[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=$HOME/foo)"
+#[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=/usr/local/spread0r)"

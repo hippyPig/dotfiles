@@ -14,7 +14,6 @@ set wildmenu
 set tabstop=2
 set shiftwidth=2
 set encoding=utf8
-" set cursorline " Too slow on my little laptop
 set guicursor=n:blinkon0
 "set list
 "set listchars=tab:▸\ ,
@@ -44,7 +43,7 @@ endfunction
 " Remove whitespace on save
 autocmd BufWritePre * :call Preserve('%s/\s\+$//e')
 " insert colon at the end of a line
-inoremap <S-Enter> <Esc>:call Preserve('s/\s*$/;/')<Enter>a
+"inoremap <S-Enter> <Esc>:call Preserve('s/\s*$/;/')<Enter>a
 
 " Use black hole register to delete single charater without updating registers
 noremap x "_x
@@ -108,6 +107,7 @@ vno <pagedown> <nop>
 " Basic and important shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>w :w<CR>
+nmap <leader>e :w<CR>
 "map <BS> i<BS>
 imap <C-v> <Esc>l<C-v>
 "map <C-h> <C-w>h
@@ -139,13 +139,13 @@ inoremap § <esc>
 " Cunning pal to paste consecutive numbers in column
 map + yyp<C-A>
 " Fast editing of vimrc
-map <leader>e :w<CR>:tabnew<CR>:e ~/.vimrc<CR>
-autocmd! bufwritepost vimrc source ~/.vimrc
+"map <leader>e :w<CR>:tabnew<CR>:e ~/.vimrc<CR>
+"autocmd! bufwritepost vimrc source ~/.vimrc
 
 " Brackets
-imap <leader>( ()<esc>i
-imap <leader>[ []<esc>i
-imap <leader>{ {}<esc>i
+"imap <leader>( ()<esc>i
+"imap <leader>[ []<esc>i
+"imap <leader>{ {}<esc>i
 
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -180,6 +180,7 @@ Bundle 'kana/vim-arpeggio'
 Bundle 'hallison/vim-markdown'
 Bundle 'changyuheng/color-scheme-holokai-of-vim'
 Bundle 'stevensons/vim-decfile'
+"Bundle 'ntpeters/vim-better-whitespace'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 "Bundle 'xolox/vim-colorscheme-switcher'
@@ -196,6 +197,8 @@ let g:move_map_keys = 1
 let g:move_key_modifier = 'C'
 
 call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+call arpeggio#map('i', '', 0, 'sdf', '<Esc>')
+"call arpeggio#map('i', '', 0, 'df', '<bs><bs>')
 
 let g:vim_decfile_disable_folding=1
 
@@ -228,6 +231,8 @@ map <leader>nt :NERDTreeToggle<cr>
 let python_highlight_numbers = 1
 let python_highlight_builtins = 1
 let python_highlight_exceptions = 1
+" Removed this to use vim-better-whitespace instead, does not highlight
+" current line
 let python_highlight_space_errors = 1
 "let c_no_curly_error = 1
 

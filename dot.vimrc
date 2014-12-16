@@ -107,6 +107,7 @@ vno <pagedown> <nop>
 " Basic and important shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>w :w<CR>
+nmap <leader>x :x<CR>
 nmap <leader>e :w<CR>
 "map <BS> i<BS>
 imap <C-v> <Esc>l<C-v>
@@ -180,6 +181,8 @@ Bundle 'kana/vim-arpeggio'
 Bundle 'hallison/vim-markdown'
 Bundle 'changyuheng/color-scheme-holokai-of-vim'
 Bundle 'stevensons/vim-decfile'
+Bundle 'oblitum/rainbow'
+Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'ntpeters/vim-better-whitespace'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
@@ -196,11 +199,34 @@ Bundle 'matze/vim-move'
 let g:move_map_keys = 1
 let g:move_key_modifier = 'C'
 
-call arpeggio#map('i', '', 0, 'jk', '<Esc>')
-call arpeggio#map('i', '', 0, 'sdf', '<Esc>')
+"call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 "call arpeggio#map('i', '', 0, 'df', '<bs><bs>')
 
 let g:vim_decfile_disable_folding=1
+
+"au FileType c,cpp,objc,objcpp call rainbow#load()
+"let g:rainbow_active = 1
+"
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+"let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 1
 
 " Color scheme and visual stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -267,7 +293,7 @@ autocmd BufNewFile,BufRead Makefile set noexpandtab
 autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.dec set filetype=decfile
-autocmd BufNewFile,BufRead *.md source $HOME/.vim/mdmaps.vim
+"autocmd BufNewFile,BufRead *.md source $HOME/.vim/mdmaps.vim
 
 
 " ignore '.DS_Store', '*.pyc' and '*.pyo' files in directory listings

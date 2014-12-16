@@ -19,8 +19,8 @@ if [ -f ~/.bash/bash_lhcb.sh ]; then
   source ~/.bash/bash_lhcb.sh
 fi
 
-if [ -f ~/.bash/bash_local.sh ]; then
-  source ~/.bash/bash_local.sh
+if [ -f ~/.bash_local ]; then
+  source ~/.bash_local
 fi
 
 
@@ -82,3 +82,5 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
 #PERL_MM_OPT="INSTALL_BASE=/Users/scphall/perl5"; export PERL_MM_OPT;
 #[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=$HOME/foo)"
 #[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=/usr/local/spread0r)"
+
+

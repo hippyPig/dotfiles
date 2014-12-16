@@ -30,7 +30,7 @@ imap <leader>ei else ifi<Space>(){<CR>}<Esc>k2wli
 imap <leader>el else<Space>{<CR>}<Esc>O<C-T>
 imap <leader>ma int main(int argc, char *argv[])<space>{<CR>}<Esc>Oreturn 0;<Esc>O
 imap <leader>sw switch()<Space>{<CR>case :<CR>default:<CR>}<Esc>kO<C-T>break;<Esc>2khi
-imap <leader>co std::cout<Space><<<Space>"<Space><<<Space>std::endl;<Esc>F"i"
+imap <leader>co std::cout<Space><<<Space>"<Space><<<Space>std::endl;<Esc>F"i"<Esc>
 imap <leader>as assert();<esc>F(a
 
 " REALLY LAZY

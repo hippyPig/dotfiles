@@ -53,6 +53,7 @@ var real_half_push = function(direction) {
 };
 
 
+
 var half_top = function(direction) {
     return slate.operation('corner', {
         'direction' : 'top-'+direction,
@@ -89,6 +90,25 @@ var quarter_push = function(updown, leftright) {
   });
 };
 
+var real_quarter_push = function(updown, leftright) {
+  var w = 'screenSizeX/2';
+  var h = 'screenSizeY/2';
+  var originX = 'screenOriginX';
+  var originY = 'screenOriginY';
+  if (updown === 'bottom') {
+    originY = 'screenOriginY+screenSizeY/2';
+  }
+  if (leftright === 'right') {
+    originX = 'screenOriginX+screenSizeX/2';
+  }
+  return slate.operation('move', {
+    'x' : originX,
+    'y' : originY,
+    'width' : w,
+    'height' : h
+  });
+};
+
 var fullscreen = slate.operation('corner', {
     'direction' : 'top-left',
     'width' : 'screenSizeX',
@@ -119,9 +139,19 @@ var real_half_actions = function(){
   return [real_half_push('left'), real_half_push('right')];
 };
 
+var real_quarter_actions = function(){
+  return [
+    real_quarter_push('top', 'left'),
+    real_quarter_push('top', 'right'),
+    real_quarter_push('bottom', 'left'),
+    real_quarter_push('bottom', 'right'),
+  ];
+};
+
 key_binds['u:'+hyper] = chain(half_actions('left'));;
 key_binds['i:'+hyper] = chain(half_actions('right'));;
 key_binds['q:'+hyper] = chain(real_half_actions());;
+key_binds['w:'+hyper] = chain(real_quarter_actions());;
 
 //key_binds['`:alt'] = slate.operation('undo');
 

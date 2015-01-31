@@ -77,7 +77,11 @@ function! s:highlight()
 endfunction
 
 "call s:highlight()
+RainbowParenthesesLoadBraces
+RainbowParenthesesActivate
 
 " For ctags, open in new tab
 nnoremap <C-w>] <C-w>]<C-w>T
 source ~/.vim/ctypes.vim
+
+

@@ -16,6 +16,9 @@ alias vi="vim"
 alias vmi="vim"
 alias im="vim"
 alias pyhton="python"
+alias spython="ipython --config=sam"
+alias noteboot="ipython notebook --matplotlib=inline"
+alias fucking="sudo"
 
 # my scripts
 alias remake="make -B"

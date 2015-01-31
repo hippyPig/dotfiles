@@ -15,6 +15,8 @@ set tabstop=2
 set shiftwidth=2
 set encoding=utf8
 set guicursor=n:blinkon0
+set lazyredraw
+"set notagbsearch
 "set list
 "set listchars=tab:▸\ ,
 "set listchars=eol:↵
@@ -115,17 +117,24 @@ imap <C-v> <Esc>l<C-v>
 "map <C-j> <C-w>j
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
-vmap <C-f> :fold<CR>
-map <leader>tn :tabnext<CR>
-map <leader>tp :tabprevious<CR>
-map <leader>to :tabnew<CR>
+"vmap <C-f> :fold<CR>
+
+"tabs
+map <leader>n :tabnext<CR>
+map <leader>m :tabprevious<CR>
+map <leader>o :tabnew<CR>
+
 map <leader>fmi :set foldmethod=indent<cr>
 map <leader>fms :set foldmethod=syntax<cr>
 " this removes hilighting
 map <F9> /Hello Sam. <CR>
 " Toggle spelling and pastemode
 map <leader><leader>ss :setlocal spell!<cr>
-map <leader>p :setlocal paste!<CR>:setlocal number!<CR>
+"map <leader>p :setlocal paste!<CR>:setlocal number!<CR>
+map <leader>p :setlocal paste!<CR>:setlocal relativenumber!<CR>
+
+vmap <C-a> ip<C-c>
+vmap <C-x> ip<C-f>
 
 " Annoying mistyped comands
 command! Q q
@@ -143,17 +152,11 @@ map + yyp<C-A>
 "map <leader>e :w<CR>:tabnew<CR>:e ~/.vimrc<CR>
 "autocmd! bufwritepost vimrc source ~/.vimrc
 
-" Brackets
-"imap <leader>( ()<esc>i
-"imap <leader>[ []<esc>i
-"imap <leader>{ {}<esc>i
-
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-" Colorschemes
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
@@ -177,16 +180,16 @@ Bundle 'endel/vim-github-colorscheme'
 Bundle 'lfilho/cosco.vim'
 Bundle 'arecarn/crunch'
 Bundle 'DeonPoncini/includefixer'
-Bundle 'kana/vim-arpeggio'
+"Bundle 'kana/vim-arpeggio'
 Bundle 'hallison/vim-markdown'
 Bundle 'changyuheng/color-scheme-holokai-of-vim'
 Bundle 'stevensons/vim-decfile'
-Bundle 'oblitum/rainbow'
 Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'ntpeters/vim-better-whitespace'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
-"Bundle 'xolox/vim-colorscheme-switcher'
+
+
 
 " All the colorschemes
 "Bundle 'flazz/vim-colorschemes'
@@ -202,31 +205,23 @@ let g:move_key_modifier = 'C'
 "call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 "call arpeggio#map('i', '', 0, 'df', '<bs><bs>')
 
-let g:vim_decfile_disable_folding=1
-
-"au FileType c,cpp,objc,objcpp call rainbow#load()
-"let g:rainbow_active = 1
+"let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+"let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 "
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-"let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 1
+      \ ['Darkblue',    'SeaGreen3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['Darkblue',    'firebrick3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 " Color scheme and visual stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -246,11 +241,8 @@ let g:Powerline_symbols = 'fancy'
 
 let g:pyflakes_use_quickfix = 0
 
-" make txt different colour 80->85 chars
-highlight rightMargin ctermfg=magenta
-match rightmargin /\%<86v.\%>81v/
 
-map <leader>nt :NERDTreeToggle<cr>
+map <leader>t :NERDTreeToggle<cr>
 
 " fsr, this doesn't work in pymaps.vim
 "let python_highlight_all = 1
@@ -259,7 +251,7 @@ let python_highlight_builtins = 1
 let python_highlight_exceptions = 1
 " Removed this to use vim-better-whitespace instead, does not highlight
 " current line
-let python_highlight_space_errors = 1
+let python_highlight_space_errors = 0
 "let c_no_curly_error = 1
 
 " Fill rest of line with characters
@@ -294,7 +286,23 @@ autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.dec set filetype=decfile
 "autocmd BufNewFile,BufRead *.md source $HOME/.vim/mdmaps.vim
+"func! IsBeamer()
+  "let firstline = getline(1)
+  "if firstline =~ '^%&\s*\a\+'
+    "let format = tolower(matchstr(firstline, '\a\+'))
+    "if format == 'beamer'
+      "source $HOME/.vim/beamermaps.vim
+    "endif
+  "endif
+"endfunc
 
+" make txt different colour 80->85 chars
+highlight rightMargin ctermfg=magenta
+if &filetype == 'tex'
+  match rightmargin /\%<86v.\%>81v/
+else
+  match rightmargin /\%<105v.\%>100v/
+endif
 
 " ignore '.DS_Store', '*.pyc' and '*.pyo' files in directory listings
 let g:netrw_list_hide='\v(\.DS_Store)|(.*\.py[co])|(\.swp)|(\.nav)|(\.aux)$'
@@ -303,11 +311,11 @@ let g:netrw_list_hide='\v(\.DS_Store)|(.*\.py[co])|(\.swp)|(\.nav)|(\.aux)$'
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
   set cursorline
+  set relativenumber
 endif
 
 " Also for gvim (rarely use, but nice when I do)
 if has("gui_running")
   set cursorline
 endif
-
 

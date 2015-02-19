@@ -5,7 +5,7 @@ _makeauto() {
   case ${COMP_CWORD} in
     1)
       COMPREPLY=( $(compgen -W \
-        "clean open" \
+        "clean open count" \
         -- "$cur") ) ;;
     *)
       COMPREPLY=() ;;

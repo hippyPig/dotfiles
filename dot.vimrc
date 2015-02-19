@@ -51,8 +51,8 @@ autocmd BufWritePre * :call Preserve('%s/\s\+$//e')
 noremap x "_x
 
 " Replace last search
-nnoremap <Leader>s :%s///gc<Left><Left><Left>
-vnoremap <Leader>s :s///gc<Left><Left><Left>
+"nnoremap <Leader>s :%s///gc<Left><Left><Left>
+"vnoremap <Leader>s :s///gc<Left><Left><Left>
 
 set tabpagemax=30
 set backspace=indent,eol,start
@@ -124,14 +124,14 @@ map <leader>n :tabnext<CR>
 map <leader>m :tabprevious<CR>
 map <leader>o :tabnew<CR>
 
-map <leader>fmi :set foldmethod=indent<cr>
-map <leader>fms :set foldmethod=syntax<cr>
+"map <leader>fmi :set foldmethod=indent<cr>
+"map <leader>fms :set foldmethod=syntax<cr>
 " this removes hilighting
 map <F9> /Hello Sam. <CR>
 " Toggle spelling and pastemode
 map <leader><leader>ss :setlocal spell!<cr>
-"map <leader>p :setlocal paste!<CR>:setlocal number!<CR>
-map <leader>p :setlocal paste!<CR>:setlocal relativenumber!<CR>
+map <leader>p :setlocal paste!<CR>:setlocal number!<CR>
+"map <leader>p :setlocal paste!<CR>:setlocal relativenumber!<CR>
 
 vmap <C-a> ip<C-c>
 vmap <C-x> ip<C-f>
@@ -163,22 +163,17 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/powerline-fonts'
 Bundle 'tpope/vim-surround'
 Bundle 'sjl/badwolf'
-Bundle 'Pychimp/vim-sol'
-Bundle 'Pychimp/vim-luna'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
-Bundle 'Lokaltog/vim-distinguished'
 Bundle 'tpope/vim-vividchalk'
-Bundle 'morhetz/gruvbox'
 Bundle 'ervandew/supertab'
 "Bundle 'kevinw/pyflakes-vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'rhysd/open-pdf.vim'
+"Bundle 'christoomey/vim-tmux-navigator'
+"Bundle 'rhysd/open-pdf.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'endel/vim-github-colorscheme'
+"Bundle 'nanotech/jellybeans.vim'
+"Bundle 'endel/vim-github-colorscheme'
 Bundle 'lfilho/cosco.vim'
-Bundle 'arecarn/crunch'
+"Bundle 'arecarn/crunch'
 Bundle 'DeonPoncini/includefixer'
 "Bundle 'kana/vim-arpeggio'
 Bundle 'hallison/vim-markdown'
@@ -285,16 +280,6 @@ autocmd BufNewFile,BufRead Makefile set noexpandtab
 autocmd BufNewFile,BufRead *.sh source $HOME/.vim/bashmaps.vim
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.dec set filetype=decfile
-"autocmd BufNewFile,BufRead *.md source $HOME/.vim/mdmaps.vim
-"func! IsBeamer()
-  "let firstline = getline(1)
-  "if firstline =~ '^%&\s*\a\+'
-    "let format = tolower(matchstr(firstline, '\a\+'))
-    "if format == 'beamer'
-      "source $HOME/.vim/beamermaps.vim
-    "endif
-  "endif
-"endfunc
 
 " make txt different colour 80->85 chars
 highlight rightMargin ctermfg=magenta
@@ -311,11 +296,16 @@ let g:netrw_list_hide='\v(\.DS_Store)|(.*\.py[co])|(\.swp)|(\.nav)|(\.aux)$'
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
   set cursorline
-  set relativenumber
+  "set relativenumber
 endif
 
 " Also for gvim (rarely use, but nice when I do)
 if has("gui_running")
   set cursorline
 endif
+
+
+
+
+
 

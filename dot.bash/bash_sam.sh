@@ -16,7 +16,7 @@ alias vi="vim"
 alias vmi="vim"
 alias im="vim"
 alias pyhton="python"
-alias spython="ipython --config=sam"
+alias spython="ipython --profile=sam"
 alias noteboot="ipython notebook --matplotlib=inline"
 alias fucking="sudo"
 
@@ -55,14 +55,17 @@ source $HOME/.wol/wol-autocomplete.sh
 source $HOME/.bash/autocompletions.sh
 export WOLDIR="$HOME/Documents/Wol"
 export thesis=$HOME/Documents/thesis/tex
-export paper=$HOME/Documents/LHCb-PAPER-2014-030/latest/latex
+export dsphipaper=$HOME/Documents/LHCb-PAPER-2012-025/latest/latex/main.pdf
+export dsphiana=$HOME/Documents/LHCb-ANA-2012-052/latest/latex/main.pdf
+export hhhpaper=$HOME/Documents/LHCb-PAPER-2014-030/latest/latex/main.pdf
+export hhhana=$HOME/Documents/LHCb-ANA-2013-031/latest/latex/main.pdf
 export ana=$HOME/Documents/ana/latest/latex
 
 if [ -f $HOME/.git-completion.bash ]; then
   source $HOME/.git-completion.bash
 fi
 #export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
-#export PYTHONPATH=$PYTHONPATH:/usr/local/python
+export PYTHONPATH=$PYTHONPATH:/usr/local/python
 alias svn=$HOME/.svn-color/svn-color.py
 alias therapy='cat /dev/urandom | hexdump -C | grep "ca fe"'
 

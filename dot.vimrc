@@ -113,11 +113,6 @@ nmap <leader>x :x<CR>
 nmap <leader>e :w<CR>
 "map <BS> i<BS>
 imap <C-v> <Esc>l<C-v>
-"map <C-h> <C-w>h
-"map <C-j> <C-w>j
-"map <C-k> <C-w>k
-"map <C-l> <C-w>l
-"vmap <C-f> :fold<CR>
 
 "tabs
 map <leader>n :tabnext<CR>
@@ -148,9 +143,6 @@ inoremap § <esc>
 
 " Cunning pal to paste consecutive numbers in column
 map + yyp<C-A>
-" Fast editing of vimrc
-"map <leader>e :w<CR>:tabnew<CR>:e ~/.vimrc<CR>
-"autocmd! bufwritepost vimrc source ~/.vimrc
 
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -159,32 +151,25 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/powerline-fonts'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
+let g:airline#extensions#tabline#left_alt_sep = '|'
+"Bundle 'Lokaltog/powerline-fonts'
+"Bundle 'powerline/powerline'
 Bundle 'tpope/vim-surround'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'ervandew/supertab'
-"Bundle 'kevinw/pyflakes-vim'
 "Bundle 'christoomey/vim-tmux-navigator'
-"Bundle 'rhysd/open-pdf.vim'
 Bundle 'pangloss/vim-javascript'
-"Bundle 'nanotech/jellybeans.vim'
-"Bundle 'endel/vim-github-colorscheme'
 Bundle 'lfilho/cosco.vim'
-"Bundle 'arecarn/crunch'
 Bundle 'DeonPoncini/includefixer'
 "Bundle 'kana/vim-arpeggio'
 Bundle 'hallison/vim-markdown'
-Bundle 'changyuheng/color-scheme-holokai-of-vim'
-Bundle 'stevensons/vim-decfile'
 Bundle 'kien/rainbow_parentheses.vim'
-"Bundle 'ntpeters/vim-better-whitespace'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
-
-
 
 " All the colorschemes
 "Bundle 'flazz/vim-colorschemes'
@@ -218,21 +203,39 @@ let g:rbpt_loadcmd_toggle = 0
 "au Syntax * RainbowParenthesesLoadSquare
 "au Syntax * RainbowParenthesesLoadBraces
 
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.whitespace = ''
+
 " Color scheme and visual stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 colorscheme molokai
 set laststatus=2  " Statusline
+let g:airline#extensions#tabline#enabled = 1
 
-" Make visual mode a bit easier to see on my screen!
-"hi VisualNOS                     guibg=#757475
-"hi Visual                        guibg=#757475
-
-let g:syntastic_quiet_warnings=1
-let g:syntastic_check_on_wq=0
+let g:syntastic_quiet_warnings = 1
+let g:syntastic_check_on_wq = 0
 
 " Must install powerline-fonts
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+"let g:Powerline_symbols = 'fancy'
+set guifont=Liberation\ Mono\ for\ Powerline\ 10
+let g:airline_powerline_fonts = 1
 
 let g:pyflakes_use_quickfix = 0
 

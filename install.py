@@ -1,34 +1,47 @@
 #!/usr/bin/python
 import os
 import sys
+import shutil
+import time
 
-def backup(dotfiles):
-    bkup_number = 0
-    bkup_dir = 'dotfiles_bkup_%d'
-    while os.path.exists(bkup_dir % bkup_number):
-        bkup_number += 1
-    bkup_dir = bkup_dir % bkup_number
-    os.mkdir(bkup_dir)
-    cmd = 'mv %s %s/.'
-    for dotfile in dotfiles:
-        os.system(cmd % (dotfile, bkup_dir))
-    return
+
+class Installer(object):
+    def __init__(self):
+        self._home = os.getenv('HOME')
+        self._cwd = os.getcwd()
+        bkup_dir = os.path.join(self._cwd, 'dotfiles_bkup_{}')
+        bkup_number = 0
+        while os.path.exists(bkup_dir.format(bkup_number)):
+            bkup_number += 1
+        self._bkupdir = bkup_dir.format(bkup_number)
+        os.mkdir(self._bkupdir)
+
+    def backup(self, fname):
+        src = os.path.join(self._home, fname)
+        if os.path.exists(src):
+            dest = os.path.join(self._bkupdir, fname)
+            shutil.move(src, dest)
+
+    @staticmethod
+    def name(fname):
+        fname = fname.replace('dot', '')
+        if fname.endswith('.sh'):
+            fname = fname.replace(',sh', '')
+        return fname
+
+    def install(self, fname):
+        self.backup(self.name(fname))
+        src = os.path.join(self._cwd, fname)
+        dest = os.path.join(self._home, self.name(fname))
+        os.system('ln -s {} {}'.format(src, dest))
+        time.sleep(0.1)
 
 
 def install():
-    dotfiles = [x for x in os.listdir('.') if x.startswith('dot.')]
-    newfiles = [x.replace('dot.', '.') for x in dotfiles]
-    newfiles = [os.path.join(os.getenv('HOME'), x) for x in newfiles]
-    backup(newfiles)
-    files = zip(dotfiles, newfiles)
-    cmd = 'ln -s %s %s'
-    for dotfile, newfile in files:
-        os.system(cmd % (dotfile, newfile))
-    return
-
-
-
-
+    file_installer = Installer()
+    files = [x for x in os.listdir('.') if x.startswith('dot.')]
+    for f in files:
+        file_installer.install(f)
 
 
 if __name__ == "__main__":

@@ -2,21 +2,20 @@
 
 [[ $- != *i* ]] && return
 
+if [ -f /etc/bashrc ]; then
+  source /etc/bashrc
+fi
 
 if [ -f ~/.bash/bash_colors.sh ]; then
   source ~/.bash/bash_colors.sh
-fi
-
-if [ -f /etc/bashrc ]; then
-  source /etc/bashrc
 fi
 
 if [ -f ~/.bash/bash_sam.sh ]; then
   source ~/.bash/bash_sam.sh
 fi
 
-if [ -f ~/.bash/bash_lhcb.sh ]; then
-  source ~/.bash/bash_lhcb.sh
+if [ -f ~/.bash/bash_alias.sh ]; then
+  source ~/.bash/bash_alias.sh
 fi
 
 if [ -f ~/.bash_local ]; then
@@ -33,7 +32,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 if [[ $platform == "OSX" ]]; then
-  PS1="\[$intgrn\]earth\[$intwht\]:\[$intgrn\]\W\[$intblu\]\$\[$txtrst\] "
+  PS1="\[$intcyn\]by\[$intwht\]:\[$intgrn\]\W\[$intblu\]\$\[$txtrst\] "
 else
   if [[ `hostname -d` == "hep.ph.ic.ac.uk" ]]; then
     alias lhcb=". ~lhcb/grouplogin/lhcb_login.sh"
@@ -75,9 +74,9 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias root="root -l"
 alias grep="grep --color=auto"
-alias tmux="tmux -2"
+#alias tmux="tmux -2"
 
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
+#export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
 #PERL_MB_OPT="--install_base \"/Users/scphall/perl5\""; export PERL_MB_OPT;
 #PERL_MM_OPT="INSTALL_BASE=/Users/scphall/perl5"; export PERL_MM_OPT;
 #[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=$HOME/foo)"

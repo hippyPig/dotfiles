@@ -159,14 +159,13 @@ key_binds['b:'+hyper] = focus('Google Chrome');
 key_binds['t:'+hyper] = focus('Terminal');
 key_binds['o:'+hyper] = focus('Finder');
 key_binds['s:'+hyper] = focus('Skype');
-key_binds['m:'+hyper] = focus('Thunderbird');
-key_binds['p:'+hyper] = focus('iTunes');
-key_binds['a:'+hyper] = focus('Adium');
+key_binds['x:'+hyper] = focus('Slack');
+key_binds['m:'+hyper] = focus('Microsoft Outlook');
 key_binds['c:'+hyper] = focus('Calendar');
-key_binds['h:'+hyper] = focus_dir('left');
-key_binds['l:'+hyper] = focus_dir('right');
-key_binds['j:'+hyper] = focus_dir('down');
-key_binds['k:'+hyper] = focus_dir('up');
+key_binds['h:'+shyper] = focus_dir('left');
+key_binds['l:'+shyper] = focus_dir('right');
+key_binds['j:'+shyper] = focus_dir('down');
+key_binds['k:'+shyper] = focus_dir('up');
 
 S.bindAll(key_binds);
 

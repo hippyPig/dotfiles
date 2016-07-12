@@ -54,7 +54,7 @@ else
   elif [[ `hostname` == "pclbscifi01" ]]; then
     PS1="\[$bldred\]\h:\W\$\[$txtrst\] "
   else
-    PS1="\[$bldgrn\]\h\[$bldwht\]:\[$intylw\]\W\[$bldgrn\]\$\[$txtrst\] "
+    PS1="\[$txtpur\]\h\[$txtwht\]:\[$txtylw\]\W\[$txtpur\]\$\[$txtrst\] "
   fi
 fi
 
@@ -74,6 +74,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias root="root -l"
 alias grep="grep --color=auto"
+
 #alias tmux="tmux -2"
 
 #export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
@@ -82,4 +83,4 @@ alias grep="grep --color=auto"
 #[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=$HOME/foo)"
 #[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=/usr/local/spread0r)"
 
-
+clear

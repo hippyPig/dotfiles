@@ -106,6 +106,8 @@ ino <pagedown> <nop>
 vno <pageup> <nop>
 vno <pagedown> <nop>
 
+nmap <cr> :nohlsearch<cr>
+
 " Basic and important shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>w :w<CR>
@@ -122,7 +124,6 @@ map <leader>o :tabnew<CR>
 "map <leader>fmi :set foldmethod=indent<cr>
 "map <leader>fms :set foldmethod=syntax<cr>
 " this removes hilighting
-map <F9> /Hello Sam. <CR>
 " Toggle spelling and pastemode
 map <leader><leader>ss :setlocal spell!<cr>
 map <leader>p :setlocal paste!<CR>:setlocal number!<CR>
@@ -160,6 +161,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-vividchalk'
+Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'ervandew/supertab'
 "Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'pangloss/vim-javascript'

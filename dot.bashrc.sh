@@ -22,6 +22,10 @@ if [ -f ~/.bash_local ]; then
   source ~/.bash_local
 fi
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 
 platform='unknown'
 unamestr=`uname`
@@ -83,3 +87,4 @@ alias grep="grep --color=auto"
 #[ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=/usr/local/spread0r)"
 
 
+source /opt/homebrew/bin/virtualenvwrapper.sh

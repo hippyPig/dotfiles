@@ -1,113 +1,40 @@
+// Configs
+S.cfga({
+  "defaultToCurrentScreen" : true,
+  "secondsBetweenRepeat" : 0.1,
+  "checkDefaultsOnLoad" : true,
+  "focusCheckWidthMax" : 3000,
+  "orderScreensLeftToRight" : true,
+  "nudgePercentOf": "screenSize",
+  "resizePercentOf": "screenSize",
+  "orderScreensLeftToRight": true
+});
 
-var resize = function (width, height, anchor) {
-    if (typeof anchor === 'undefined') anchor = 'top-left';
+// Definitions
+var key_binds = {};
+var ctrlshift = 'ctrl,shift';
+var hyper = 'ctrl,cmd,alt';
+var shyper = 'shift,ctrl,alt,cmd';
+var leftScreenRef = "0";
+var rightScreenRef = "1";
 
-    return slate.operation('resize', {
-        'width' : width,
-        'height' : height,
-        'anchor' : anchor
-    });
-};
 
-var nudge = function (x, y) {
-    return slate.operation('nudge', {
-        'x' : x,
-        'y' : y
-    });
-};
-
+// Function definitions and such
+// =============================
 var focus = function (app_name) {
-    return slate.operation('focus', {'app' : app_name});
+    return S.op('focus', {'app' : app_name});
 };
+
 
 var focus_dir = function (direction) {
     return slate.operation('focus', {'direction' : direction});
 };
 
+
 var chain = function(actions) {
     return slate.operation('chain', {'operations' : actions});
 };
 
-var half_push = function(direction) {
-  var w = 'screenSizeX*2/5';
-  if (direction === 'left') {
-    w = 'screenSizeX*3/5';
-  };
-  return slate.operation('push', {
-    'direction' : direction,
-    //'style' : 'bar-resize:screenSizeX/2'
-    'style' : 'bar-resize:'+w
-  });
-};
-
-var real_half_push = function(direction) {
-  var w = 'screenSizeX*1/2';
-  if (direction === 'left') {
-    w = 'screenSizeX*1/2';
-  };
-  return slate.operation('push', {
-    'direction' : direction,
-    //'style' : 'bar-resize:screenSizeX/2'
-    'style' : 'bar-resize:'+w
-  });
-};
-
-
-
-var half_top = function(direction) {
-    return slate.operation('corner', {
-        'direction' : 'top-'+direction,
-        'width' : 'screenSizeX/2',
-        'height' : 'screenSizeY/2'
-    });
-};
-
-var half_bottom = function(direction) {
-    return slate.operation('corner', {
-        'direction' : 'bottom-'+direction,
-        'width' : 'screenSizeX/2',
-        'height' : 'screenSizeY/2'
-    });
-};
-
-var quarter_push = function(updown, leftright) {
-  var width = 'screenSizeX*3/5';
-  var height = 'screenSizeY/2';
-  var originX = 'screenOriginX';
-  var originY = 'screenOriginY';
-  if (leftright === 'right') {
-    width = 'screenSizeX*2/5';
-    originX = 'screenOriginX+screenSizeX*3/5';
-  };
-  if (updown === 'bottom') {
-    originY = 'screenOriginY+screenSizeY/2';
-  };
-  return slate.operation('move', {
-    'x' : originX,
-    'y' : originY,
-    'width' : width,
-    'height' : height
-  });
-};
-
-var real_quarter_push = function(updown, leftright) {
-  var w = 'screenSizeX/2';
-  var h = 'screenSizeY/2';
-  var originX = 'screenOriginX';
-  var originY = 'screenOriginY';
-  if (updown === 'bottom') {
-    originY = 'screenOriginY+screenSizeY/2';
-  }
-  if (leftright === 'right') {
-    originX = 'screenOriginX+screenSizeX/2';
-  }
-  return slate.operation('move', {
-    'x' : originX,
-    'y' : originY,
-    'width' : w,
-    'height' : h
-  });
-};
 
 var fullscreen = slate.operation('corner', {
     'direction' : 'top-left',
@@ -116,92 +43,187 @@ var fullscreen = slate.operation('corner', {
 });
 
 
-S.configAll({
-    defaultToCurrentScreen:true,
-    nudgePercentOf:'screenSize',
-    resizePercentOf:'screenSize'
-});
+var push_half = function(direction) {
+  var w = 'screenSizeX/2';
+  return slate.operation('push', {
+    'direction' : direction,
+    'style' : 'bar-resize:'+w
+  });
+};
 
 
-var key_binds = {};
-var hyper = 'ctrl,alt,cmd';
-var shyper = 'shift,ctrl,alt,cmd';
+var push_third = function(direction) {
+  var w = 'screenSizeX/3';
+  return slate.operation('push', {
+    'direction' : direction,
+    'style' : 'bar-resize:'+w
+  });
+};
 
-//key_binds['r:ctrl,shift'] = slate.operation('relaunch');
+
+var push_two_third = function(direction) {
+  var w = 'screenSizeX*2/3';
+  return slate.operation('push', {
+    'direction' : direction,
+    'style' : 'bar-resize:'+w
+  });
+};
+
+
+var push_quarter = function(direction) {
+  var w = 'screenSizeX/4';
+  return slate.operation('push', {
+    'direction' : direction,
+    'style' : 'bar-resize:'+w
+  });
+};
+
+
+var resize = function(width, height, anchor) {
+    if (typeof anchor === 'undefined') anchor = 'top-left';
+    return S.op('resize', {
+        'width' : width,
+        'height' : height,
+        'anchor' : anchor
+    });
+};
+
+
+var left_screen_right = slate.operation(
+  "move",
+  {
+    // "screen" : leftScreenRef,
+    "x" : "screenOriginX+(screenSizeX*2/3)",
+    "y" : "screenOriginY",
+    "width" : "screenSizeX/3",
+    "height" : "screenSizeY"
+  }
+);
+
+
+var left_screen_left = slate.operation(
+  "move",
+  {
+    // "screen" : leftScreenRef,
+    "x" : "screenOriginX",
+    "y" : "screenOriginY",
+    "width" : "screenSizeX/3",
+    "height" : "screenSizeY"
+  }
+);
+
+
+// var real_half_push = function(direction) {
+//   var w = 'screenSizeX*1/2';
+//   if (direction === 'left') {
+//     w = 'screenSizeX*1/2';
+//   };
+//   return slate.operation('push', {
+//     'direction' : direction,
+//     'style' : 'bar-resize:'+w
+//   });
+// };
+
+
+// var real_third_push = function(direction) {
+//   var w = 'screenSizeX*1/3';
+//   if (direction === 'left') {
+//     w = 'screenSizeX*1/3';
+//   };
+//   return slate.operation('push', {
+//     'direction' : direction,
+//     'style' : 'bar-resize:'+w
+//   });
+// };
+
+
+// var real_two_third_push = function(direction) {
+//   var w = 'screenSizeX*2/3';
+//   if (direction === 'left') {
+//     w = 'screenSizeX*2/3';
+//   };
+//   return slate.operation('push', {
+//     'direction' : direction,
+//     'style' : 'bar-resize:'+w
+//   });
+// };
+
+
+// var half_top = function(direction) {
+//     return slate.operation('corner', {
+//         'direction' : 'top-'+direction,
+//         'width' : 'screenSizeX/2',
+//         'height' : 'screenSizeY/2'
+//     });
+// };
+
+
+// var half_bottom = function(direction) {
+//     return slate.operation('corner', {
+//         'direction' : 'bottom-'+direction,
+//         'width' : 'screenSizeX/2',
+//         'height' : 'screenSizeY/2'
+//     });
+// };
+
+
+// var quarter_push = function(updown, leftright) {
+//   var width = 'screenSizeX*3/5';
+//   var height = 'screenSizeY/2';
+//   var originX = 'screenOriginX';
+//   var originY = 'screenOriginY';
+//   if (leftright === 'right') {
+//     width = 'screenSizeX*2/5';
+//     originX = 'screenOriginX+screenSizeX*3/5';
+//   };
+//   if (updown === 'bottom') {
+//     originY = 'screenOriginY+screenSizeY/2';
+//   };
+//   return slate.operation('move', {
+//     'x' : originX,
+//     'y' : originY,
+//     'width' : width,
+//     'height' : height
+//   });
+// };
+
+
+
+
+var chain_half = function(direction){
+  return chain([
+    push_half(direction),
+    push_third(direction),
+    push_two_third(direction)
+  ])
+};
+
+
+
+// Binding definitions
+// ===================
+
+
+// Push bindings
+// key_binds["right:ctrl;shift"] = S.op("push", { "direction" : "right", "style" : "bar-resize:screenSizeX/2" });
+// key_binds["left:ctrl;shift"] = S.op("push", { "direction" : "left", "style" : "bar-resize:screenSizeX/2" });
+// key_binds["up:ctrl;shift"] = S.op("push", { "direction" : "up", "style" : "bar-resize:screenSizeY/2" });
+// key_binds["down:ctrl;shift"] = S.op("push", { "direction" : "down", "style" : "bar-resize:screenSizeY/2" });
 
 key_binds['f:'+hyper] = fullscreen;
-
-var half_actions = function(direction){
-  return [half_push(direction), quarter_push('top', direction), quarter_push('bottom', direction)];
-};
-
-var real_half_actions = function(){
-  return [real_half_push('left'), real_half_push('right')];
-};
-
-var real_quarter_actions = function(){
-  return [
-    real_quarter_push('top', 'left'),
-    real_quarter_push('top', 'right'),
-    real_quarter_push('bottom', 'left'),
-    real_quarter_push('bottom', 'right'),
-  ];
-};
-
-key_binds['u:'+hyper] = chain(half_actions('left'));;
-key_binds['i:'+hyper] = chain(half_actions('right'));;
-key_binds['q:'+hyper] = chain(real_half_actions());;
-key_binds['w:'+hyper] = chain(real_quarter_actions());;
-
-//key_binds['`:alt'] = slate.operation('undo');
-
+key_binds['h:'+shyper] = chain_half('left');
+key_binds['l:'+shyper] = chain_half('right');
+// Focus
 key_binds['b:'+hyper] = focus('Google Chrome');
 key_binds['t:'+hyper] = focus('Terminal');
-key_binds['o:'+hyper] = focus('Finder');
-key_binds['s:'+hyper] = focus('Skype');
-key_binds['x:'+hyper] = focus('Slack');
+key_binds['x:'+hyper] = focus('Workplace Chat');
+key_binds['a:'+hyper] = focus('Finder');
 key_binds['m:'+hyper] = focus('Microsoft Outlook');
-key_binds['c:'+hyper] = focus('Calendar');
-key_binds['h:'+shyper] = focus_dir('left');
-key_binds['l:'+shyper] = focus_dir('right');
-key_binds['j:'+shyper] = focus_dir('down');
-key_binds['k:'+shyper] = focus_dir('up');
+
+key_binds['h:'+ctrlshift] = focus_dir('left');
+key_binds['l:'+ctrlshift] = focus_dir('right');
+key_binds['j:'+ctrlshift] = focus_dir('down');
+key_binds['k:'+ctrlshift] = focus_dir('up');
+
 
 S.bindAll(key_binds);
-
-var adium_contacts = slate.operation('move', {
-  'x' : 'screenOriginX+screenSizeX*4/5',
-  'y' : 'screenOriginY',
-  'width' : 'screenSizeX/5',
-  'height' : 'screenSizeY'
-});
-
-var adium_chat = slate.operation('move', {
-  'x' : 'screenOriginX+screenSizeX*3/5',
-  'y' : 'screenOriginY',
-  'width' : 'screenSizeX/5',
-  'height' : 'screenSizeY'
-});
-
-var skype = slate.operation('move', {
-  'x' : 'screenOriginX',
-  'y' : 'screenOriginY',
-  'width' : 'screenSizeX*3/5',
-  'height' : 'screenSizeY'
-});
-
-slate.bind("d:"+hyper, function(win) {
-  var appName = win.app().name();
-  if (appName === "Adium") {
-    if (win.title() === "Contacts") {
-      win.doOperation(adium_contacts);
-    } else {
-      win.doOperation(adium_chat);
-    };
-  } else if (appName === "Skype") {
-    win.doOperation(skype);
-  } else {
-    win.doOperation(fullscreen);
-  };
-});
-

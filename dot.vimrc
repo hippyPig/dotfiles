@@ -147,8 +147,10 @@ map + yyp<C-A>
 
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
+Plugin 'VundleVim/Vundle.vim'
+
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
@@ -172,6 +174,7 @@ Bundle 'hallison/vim-markdown'
 Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
+Bundle 'tpope/vim-commentary'
 
 " All the colorschemes
 "Bundle 'flazz/vim-colorschemes'
@@ -181,6 +184,11 @@ Bundle 'kien/rainbow_parentheses.vim'
 
 " For move  - disables because key bindings don't work except with C
 Bundle 'matze/vim-move'
+
+call vundle#end()
+filetype plugin indent on
+
+
 let g:move_map_keys = 1
 let g:move_key_modifier = 'C'
 
